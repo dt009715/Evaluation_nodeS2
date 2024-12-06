@@ -1,0 +1,39 @@
+<%- include("header.ejs") %>
+<main>
+  <h1>Liste des balades</h1>
+  <div class="connexion">
+    <a href="/register">S'inscrire</a>
+    <a href="/login">Se connecter</a>
+  </div>
+  <a href="/add">ajouter une nouvelle balade</a>
+  <div>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Nom de la balade</th>
+        <th>Arrondissement</th>
+        <th>Texte de présentation</th>
+        <th>Date de publication</th>
+        <th>Actions</th>
+      </tr>
+      <% if (balade && balade.length > 0) { %> <% balade.forEach(function(item)
+      { %>
+      <tr>
+        <td><%= item._id %></td>
+        <td><%= item.nom %></td>
+        <td><%= item.arrondissement %></td>
+        <td><%= item.text_intro %></td>
+        <td><%= item.date_publication %></td>
+        <td>
+          <a href="/update-one/<%= item._id %>">Modifier</a>
+          <a href="/delete/<%= item._id %>">Supprimer</a>
+        </td>
+      </tr>
+      <% }) %> <% } else { %>
+      <tr>
+        <td colspan="6">Aucune balade trouvée</td>
+      </tr>
+      <% } %>
+    </table>
+  </div>
+</main>

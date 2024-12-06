@@ -1,0 +1,46 @@
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+form div {
+  display: flex;
+  padding-left: 5px;
+  align-items: center;
+  margin: 10px 0;
+}
+form div label {
+  width: 120px;
+}
+form div input[type="text"],
+form div input[type="email"],
+form div input[type="number"] {
+  flex: 1;
+  padding: 5px 8px;
+}
+form div input[type="submit"] {
+  padding: 5px 8px;
+}
+form div input[type="submit"]:hover {
+  border: 2px solid black;
+}
+
+.connexion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1 1 0%;
+  padding-bottom: 10px;
+  padding-left: 2px;
+}
+
+/*# sourceMappingURL=style.css.map */

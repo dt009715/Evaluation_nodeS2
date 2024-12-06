@@ -1,0 +1,48 @@
+<%- include("header.ejs") %>
+<main>
+  <% if(balade._id){ %>
+  <h1>Modifier une balade</h1>
+  <% }else{ %>
+  <h1>Ajouter une nouvelle balade</h1>
+  <% } %> <% if(erreur) { %>
+  <p><%= erreur %></p>
+  <% } %>
+  <a href="/">retour à l'accueil</a>
+  <form
+    action="<%= balade._id ? `/update/${balade._id}` : '/add' %>"
+    method="POST"
+  >
+    <div>
+      <label for="nom">nom de la balade</label>
+      <input
+        type="text"
+        name="nom"
+        id="nom"
+        placeholder="nom de la balade"
+        value="<%= balade.nom ? balade.nom : '' %>"
+      />
+    </div>
+    <div>
+      <label for="arrondissement">arrondissement</label>
+      <input
+        type="number"
+        name="arrondissement"
+        id="arrondissement"
+        value="<%= balade.arrondissement ? balade.arrondissement : '' %>"
+      />
+    </div>
+    <div>
+      <label for="texte_intro">présentation de la balade</label>
+      <input
+        type="text"
+        name="texte_intro"
+        id="texte_intro"
+        placeholder="description de balade"
+        value="<%= balade.texte_intro ? balade.texte_intro : '' %>"
+      />
+    </div>
+    <div>
+      <input type="submit" />
+    </div>
+  </form>
+</main>
